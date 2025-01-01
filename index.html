@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kathmandu Rental - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="logo1.png" alt="Kathmandu Rental">
+      </div>
+      <nav>
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+        <!-- Navigation Links -->
+        <ul id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#listings">Rooms</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Find Your Perfect Room in Kathmandu</h2>
+      <form action="#" method="GET">
+        <input type="text" placeholder="Enter Location (e.g., Thamel, Boudha)" required>
+        <input type="number" placeholder="Min Price" required>
+        <input type="number" placeholder="Max Price" required>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Listings Section -->
+  <section id="listings" class="listings">
+    <div class="container">
+      <h2>Available Rooms</h2>
+      <div class="filters">
+        <select id="location">
+          <option value="">All Locations</option>
+          <option value="Thamel">Thamel</option>
+          <option value="Boudha">Boudha</option>
+          <option value="Patan">Patan</option>
+        </select>
+        <input type="number" id="minPrice" placeholder="Min Price">
+        <input type="number" id="maxPrice" placeholder="Max Price">
+        <button onclick="filterListings()">Apply Filters</button>
+      </div>
+      <div class="listings-grid">
+        <div class="listing" data-location="Thamel" data-price="15000">
+          <img src="room1.webp" alt="Room 1">
+          <h4>Cozy Room in Thamel</h4>
+          <p>Rs 15,000/month</p>
+          <a href="#">View Details</a>
+        </div>
+        <div class="listing" data-location="Boudha" data-price="25000">
+          <img src="room2.webp" alt="Room 2">
+          <h4>Apartment in Boudha</h4>
+          <p>Rs 25,000/month</p>
+          <a href="#">View Details</a>
+        </div>
+        <div class="listing" data-location="Patan" data-price="10000">
+          <img src="room3.webp" alt="Room 3">
+          <h4>Shared Room in Patan</h4>
+          <p>Rs 10,000/month</p>
+          <a href="#">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        Welcome to <strong>Kathmandu Rental</strong>, your trusted partner in finding the perfect rental properties in Kathmandu, Nepal. 
+        Whether you're looking for a cozy room, a shared apartment, or an entire house, we’ve got you covered.
+      </p>
+      <p>
+        Our mission is to make the rental process simple, transparent, and stress-free. With a wide range of listings and user-friendly tools, 
+        we help you find a place that        feels like home.
+    </p>
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li>Extensive Listings: From Thamel to Boudha, we cover all major areas in Kathmandu.</li>
+      <li>Verified Properties: Every listing is carefully vetted for authenticity.</li>
+      <li>24/7 Support: Our team is always here to assist you.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>
+      Have questions or need assistance? We’re here to help! Reach out to us via the form below, or contact us directly using the details provided.
+    </p>
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Kathmandu, Nepal</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <p>+977 123 456 7890</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p>info@kathmandurental.com</p>
+      </div>
+    </div>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2023 Kathmandu Rental. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // JavaScript to toggle the navigation menu and change the icon
+  function toggleMenu() {
+    const navLinks = document.getElementById('nav-links');
+    const hamburger = document.querySelector('.hamburger i');
+
+    navLinks.classList.toggle('active');
+
+    // Toggle between hamburger and cross icon
+    if (navLinks.classList.contains('active')) {
+      hamburger.classList.remove('fa-bars');
+      hamburger.classList.add('fa-times');
+    } else {
+      hamburger.classList.remove('fa-times');
+      hamburger.classList.add('fa-bars');
+    }
+  }
+
+  // Close the menu when a link is clicked
+  const navLinks = document.querySelectorAll('#nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const navLinks = document.getElementById('nav-links');
+      const hamburger = document.querySelector('.hamburger i');
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('fa-times');
+      hamburger.classList.add('fa-bars');
+    });
+  });
+
+  // Filter Listings (for Listings Section)
+  function filterListings() {
+    const location = document.getElementById('location').value.toLowerCase();
+    const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+    const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+
+    const listings = document.querySelectorAll('.listing');
+
+    listings.forEach(listing => {
+      const listingLocation = listing.getAttribute('data-location').toLowerCase();
+      const listingPrice = parseFloat(listing.getAttribute('data-price'));
+
+      const matchesLocation = location === '' || listingLocation.includes(location);
+      const matchesPrice = listingPrice >= minPrice && listingPrice <= maxPrice;
+
+      if (matchesLocation && matchesPrice) {
+        listing.style.display = 'block';
+      } else {
+        listing.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+      text-align: center;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .hero h2 {
+      font-size: 28px;
+    }
+  
+    .hero form {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hero input, .hero button {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    .filters {
+      flex-direction: column;
+    }
+  
+    .filters select, .filters input, .filters button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        /* About Section */
+        .about h2 {
+          font-size: 24px;
+        }
+      
+        .about h3 {
+          font-size: 20px;
+        }
+      
+        .about p, .about ul li {
+          font-size: 14px;
+        }
+      
+        /* Contact Section */
+        .contact h2 {
+          font-size: 24px;
+        }
+      
+        .contact p {
+          font-size: 14px;
+        }
+      
+        .contact-info {
+          flex-direction: column;
+          gap: 20px;
+        }
+      
+        .info-item i {
+          font-size: 20px;
+        }
+      
+        .info-item p {
+          font-size: 14px;
+        }
+      
+        .contact-form input,
+        .contact-form textarea {
+          font-size: 14px;
+        }
+      
+        .contact-form button {
+          font-size: 14px;
+        }
+      }
+      
